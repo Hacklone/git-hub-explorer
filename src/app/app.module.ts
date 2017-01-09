@@ -9,6 +9,7 @@ import { AppRoutes } from './app.routes';
 import { SearchBoxComponent } from './shared/components/search-box/search-box.component';
 import { GithubService } from './shared/services/github/github.service';
 import { RepositoryCardComponent } from './shared/components/repository-card/repository-card.component';
+import { RepositoriesComponent } from './repositories/repositories.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { RepositoryCardComponent } from './shared/components/repository-card/rep
     SearchComponent,
     HeaderComponent,
     SearchBoxComponent,
-    RepositoryCardComponent
+    RepositoryCardComponent,
+    RepositoriesComponent
   ],
   imports: [
     BrowserModule,

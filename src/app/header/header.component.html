@@ -1,4 +1,10 @@
-<h1 class="text-center">
-  <img src="assets/images/github.png">
-  <span class="vertical-align-bottom">Explorer</span>
-</h1>
+<header [class.collapsed]="isCollapsedMode">
+  <div *ngIf="isCollapsedMode" class="back pull-left" title="Back" [routerLink]="'/'">
+    <span class="fa fa-lg fa-arrow-left"></span>
+  </div>
+
+  <h1 class="text-center">
+    <img src="assets/images/github.png">
+    <span class="vertical-align-bottom">Explorer</span>
+  </h1>
+</header>

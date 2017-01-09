@@ -1,0 +1,22 @@
+<div class="text-center">
+  <h2>{{ repository?.name }}</h2>
+
+  <div class="meta-data">
+    (
+    <span title="Stargazers">
+      <span class="fa fa-star"></span>
+      {{ repository?.stargazersCount }}
+    </span>
+
+    <span title="Forks">
+      <span class="fa fa-code-fork"></span>
+      {{ repository?.forksCount }}
+    </span>
+
+    <span title="Issues">
+      <span class="fa fa-exclamation-circle"></span>
+      {{ repository?.openIssuesCount }}
+    </span>
+    )
+  </div>
+</div>

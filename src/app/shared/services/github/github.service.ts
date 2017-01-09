@@ -16,6 +16,13 @@ export class GithubService {
       .toPromise();
   }
 
+  public async getRepositoryMetadataByFullNameAsync(urlEncodedRepositoryFullName: string): Promise<RepositoryMetadata> {
+    return await this._http.get(`https://api.github.com/search/repositories?q=repo:${urlEncodedRepositoryFullName}`)
+      .map(res => res.json().items[0])
+      .map(this.parseRepositoryMetadata)
+      .toPromise();
+  }
+
   private parseRepositoryMetadata(repoMetadata): RepositoryMetadata {
     return {
       id: repoMetadata.id,
