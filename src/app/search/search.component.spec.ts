@@ -4,7 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { SearchComponent } from './search.component';
-import { SearchBoxComponent } from "../shared/components/search-box/search-box.component";
+import { SearchBoxComponent } from '../shared/components/search-box/search-box.component';
 
 describe('SearchComponent', () => {
   let component: SearchComponent;

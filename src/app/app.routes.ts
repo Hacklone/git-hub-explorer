@@ -1,5 +1,5 @@
-import { RouterModule, Routes } from "@angular/router";
-import { SearchComponent } from "./search/search.component";
+import { RouterModule, Routes } from '@angular/router';
+import { SearchComponent } from './search/search.component';
 
 const routeConfigs: Routes = [
   { path: '', component: SearchComponent },
