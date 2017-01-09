@@ -7,6 +7,7 @@ import { SearchComponent } from './search/search.component';
 import { HeaderComponent } from './header/header.component';
 import { AppRoutes } from './app.routes';
 import { SearchBoxComponent } from './shared/components/search-box/search-box.component';
+import { GithubService } from './shared/services/github/github.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,9 @@ import { SearchBoxComponent } from './shared/components/search-box/search-box.co
 
     AppRoutes
   ],
-  providers: [],
+  providers: [
+    GithubService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
