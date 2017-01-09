@@ -1,6 +1,8 @@
 # GitHubExplorer
 This project helps developers explore GitHub.
 
+> This project has only been tested in Chrome browser!
+
 ## Developer notes
 
 ### Development server

@@ -1,3 +1,25 @@
 <div class="text-center pt-4">
-  <app-search-box [debounceTime]="300" [placeholder]="'Search GitHub repositories...'"></app-search-box>
+  <app-search-box (search)="onSearch($event)"
+                  [debounceTime]="300"
+                  [placeholder]="'Search GitHub repositories...'"></app-search-box>
+
+  <div class="mt-5">
+    <div *ngIf="loadingRepositories">
+      <img src="../../assets/images/loading.gif">
+    </div>
+
+    <div class="repositories-container">
+      <div class="repository" *ngFor="let repository of repositories">
+        <app-repository-card [repository]="repository"></app-repository-card>
+      </div>
+    </div>
+
+    <p *ngIf="!repositories?.length && !loadingRepositories" class="text-muted">
+      Enter text in search box to search for repositories...
+    </p>
+
+    <p *ngIf="repositoryLoadError" class="text-danger">
+      Failed to load repositories from GitHub
+    </p>
+  </div>
 </div>

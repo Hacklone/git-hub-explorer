@@ -1,10 +1,9 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
 
 import { SearchComponent } from './search.component';
 import { SearchBoxComponent } from '../shared/components/search-box/search-box.component';
+import { GithubService } from '../shared/services/github/github.service';
 
 describe('SearchComponent', () => {
   let component: SearchComponent;
@@ -12,9 +11,17 @@ describe('SearchComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchComponent, SearchBoxComponent ]
+      declarations: [SearchComponent, SearchBoxComponent],
+      providers: [
+        {
+          provide: GithubService,
+          useValue: {
+            searchRepositoriesMetadataAsync: jasmine.createSpy('GithubService.searchRepositoriesMetadataAsync()').and.returnValue()
+          }
+        }
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

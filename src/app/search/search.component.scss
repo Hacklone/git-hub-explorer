@@ -2,3 +2,20 @@ app-search-box {
   display: inline-block;
   width: 60%;
 }
+
+.repositories-container {
+  display: flex;
+
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .repository {
+    width: 360px;
+    height: 120px;
+
+    margin: 0 10px 16px 10px;
+
+    position: relative;
+  }
+}
