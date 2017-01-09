@@ -23,9 +23,9 @@ export class SearchComponent implements OnInit {
   async onSearch(searchTerm: string) {
     this.loadingRepositories = true;
 
-    if (!searchTerm) {
-      this.repositories = [];
+    this.repositories = [];
 
+    if (!searchTerm) {
       this.repositoryLoadError = false;
     } else {
       try {
