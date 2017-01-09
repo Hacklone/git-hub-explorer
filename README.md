@@ -3,6 +3,8 @@ This project helps developers explore GitHub.
 
 > This project has only been tested in Chrome browser!
 
+## [Visit GitHub Explorer](https://hacklone.github.io/git-hub-explorer/) 
+
 ## Developer notes
 
 ### Development server
