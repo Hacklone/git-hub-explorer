@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { HeaderComponent } from './header/header.component';
 import { AppRoutes } from "./app.routes";
+import { SearchBoxComponent } from './shared/components/search-box/search-box.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
-    HeaderComponent
+    HeaderComponent,
+    SearchBoxComponent
   ],
   imports: [
     BrowserModule,
