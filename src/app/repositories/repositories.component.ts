@@ -13,7 +13,8 @@ export class RepositoriesComponent implements OnInit, OnDestroy {
   private _routeParametersSubscription: Subscription;
 
   constructor(private _route: ActivatedRoute,
-              private _gitHubService: GithubService) { }
+              private _gitHubService: GithubService) {
+  }
 
   public repository: RepositoryMetadata;
 
@@ -21,7 +22,7 @@ export class RepositoriesComponent implements OnInit, OnDestroy {
     this._routeParametersSubscription = this._route.params.subscribe(async params => {
       const repositoryName = params['name'];
 
-      if(repositoryName) {
+      if (repositoryName) {
         this.repository = await this._gitHubService.getRepositoryMetadataByFullNameAsync(repositoryName);
       }
     });

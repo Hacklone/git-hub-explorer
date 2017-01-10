@@ -12,4 +12,6 @@ export interface RepositoryMetadata {
   stargazersCount: number;
 
   openIssuesCount: number;
+
+  watchersCount: number;
 }

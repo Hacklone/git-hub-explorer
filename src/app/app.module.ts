@@ -11,6 +11,10 @@ import { GithubService } from './shared/services/github/github.service';
 import { RepositoryCardComponent } from './shared/components/repository-card/repository-card.component';
 import { RepositoriesComponent } from './repositories/repositories.component';
 import { IssuesComponent } from './repositories/issues/issues.component';
+import { ChartsComponent } from './repositories/charts/charts.component';
+import { ChartsModule } from 'ng2-charts';
+
+import 'chart.js';
 
 @NgModule({
   declarations: [
@@ -20,13 +24,16 @@ import { IssuesComponent } from './repositories/issues/issues.component';
     SearchBoxComponent,
     RepositoryCardComponent,
     RepositoriesComponent,
-    IssuesComponent
+    IssuesComponent,
+    ChartsComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
 
-    AppRoutes
+    AppRoutes,
+
+    ChartsModule
   ],
   providers: [
     GithubService

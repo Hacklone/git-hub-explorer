@@ -39,7 +39,8 @@ export class GithubService {
       description: repoMetadata.description,
       forksCount: repoMetadata.forks_count,
       stargazersCount: repoMetadata.stargazers_count,
-      openIssuesCount: repoMetadata.open_issues_count
+      openIssuesCount: repoMetadata.open_issues_count,
+      watchersCount: repoMetadata.watchers
     };
   }
 
