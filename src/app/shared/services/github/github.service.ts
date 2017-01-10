@@ -48,7 +48,7 @@ export class GithubService {
     return {
       id: issue.id,
       issueNumber: issue.number,
-      url: issue.url,
+      url: issue.html_url,
       title: issue.title,
       postedByUserName: issue.user.login,
       postedByUrl: issue.user.html_url,

@@ -1,6 +1,6 @@
 <div class="text-left mb-3">
   <span class="fa fa-exclamation-circle"></span>
-  {{ issues?.length }}
+  More than {{ issues?.length }}
   Open
 </div>
 
@@ -8,7 +8,7 @@
   <tr *ngFor="let issue of issues">
     <td>
       <div class="issue-title">
-        {{ issue.title }}
+        <a [attr.href]="issue.url" target="_blank">{{ issue.title }}</a>
       </div>
       <div class="issue-data">
         #{{ issue.issueNumber }} opened on {{ issue.createdDate | date:'short' }} by <a [attr.href]="issue.postedByUrl" target="_blank">{{ issue.postedByUserName }}</a>
