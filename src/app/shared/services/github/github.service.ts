@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { RepositoryMetadata } from './repository-metadata.model';
+import { RepositoryIssue } from './repository-issue.model';
 
 @Injectable()
 export class GithubService {
@@ -23,7 +24,14 @@ export class GithubService {
       .toPromise();
   }
 
-  private parseRepositoryMetadata(repoMetadata): RepositoryMetadata {
+  public async getRepositoryIssuesByFullNameAsync(urlEncodedRepositoryFullName: string): Promise<RepositoryIssue[]> {
+    return await this._http.get(`https://api.github.com/search/issues?q=repo:${urlEncodedRepositoryFullName}`)
+      .map(res => res.json().items)
+      .map(items => items.map(this.parseRepositoryIssue))
+      .toPromise();
+  }
+
+  private parseRepositoryMetadata(repoMetadata: any): RepositoryMetadata {
     return {
       id: repoMetadata.id,
       name: repoMetadata.full_name,
@@ -32,6 +40,18 @@ export class GithubService {
       forksCount: repoMetadata.forks_count,
       stargazersCount: repoMetadata.stargazers_count,
       openIssuesCount: repoMetadata.open_issues_count
+    };
+  }
+
+  private parseRepositoryIssue(issue: any): RepositoryIssue {
+    return {
+      id: issue.id,
+      issueNumber: issue.number,
+      url: issue.url,
+      title: issue.title,
+      postedByUserName: issue.user.login,
+      postedByUrl: issue.user.html_url,
+      createdDate: new Date(issue.created_at)
     };
   }
 }

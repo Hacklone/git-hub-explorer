@@ -1,4 +1,4 @@
-<div class="text-center">
+<div class="text-center container">
   <h2>{{ repository?.name }}</h2>
 
   <div class="meta-data">
@@ -18,5 +18,24 @@
       {{ repository?.openIssuesCount }}
     </span>
     )
+  </div>
+
+  <ul class="mt-4 mb-4 nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['issues']" [routerLinkActive]="'active'" href="">
+        <span class="fa fa-exclamation-circle"></span>
+        Issues
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['charts']" [routerLinkActive]="'active'" href="">
+        <span class="fa fa-bar-chart"></span>
+        Charts
+      </a>
+    </li>
+  </ul>
+
+  <div>
+    <router-outlet></router-outlet>
   </div>
 </div>

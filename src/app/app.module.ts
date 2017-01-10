@@ -10,6 +10,7 @@ import { SearchBoxComponent } from './shared/components/search-box/search-box.co
 import { GithubService } from './shared/services/github/github.service';
 import { RepositoryCardComponent } from './shared/components/repository-card/repository-card.component';
 import { RepositoriesComponent } from './repositories/repositories.component';
+import { IssuesComponent } from './repositories/issues/issues.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { RepositoriesComponent } from './repositories/repositories.component';
     HeaderComponent,
     SearchBoxComponent,
     RepositoryCardComponent,
-    RepositoriesComponent
+    RepositoriesComponent,
+    IssuesComponent
   ],
   imports: [
     BrowserModule,

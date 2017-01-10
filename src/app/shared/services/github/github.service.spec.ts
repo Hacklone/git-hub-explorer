@@ -167,4 +167,6 @@ describe('GithubService', () => {
       expect(thrownError).toEqual(expectedError);
     });
   });
+
+  //TODO: Write tests for getRepositoryMetadataByFullNameAsync() and getRepositoryIssuesByFullNameAsync()
 });

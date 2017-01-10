@@ -1,0 +1,15 @@
+@import "../../../styles/colors";
+
+.fa-exclamation-circle {
+  color: $green;
+}
+
+.issue-title {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.issue-data {
+  color: $grey-text;
+  font-size: 12px;
+}
