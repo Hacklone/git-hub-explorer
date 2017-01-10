@@ -1,11 +1,21 @@
 import { browser, element, by } from 'protractor';
 
 export class GitHubExplorerPage {
-  navigateTo() {
+  navigateToAsync() {
     return browser.get('/');
   }
 
-  getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+  async searchForRepositoryAsync(repositoryName: string) {
+    const input = element(by.css('app-search-box input'));
+
+    await input.sendKeys(repositoryName);
+
+    const repositories = element(by.css('app-repository-card'));
+
+    await browser.wait(() => repositories.isPresent());
+  }
+
+  getRepositoriesNameAsync() {
+    return element(by.css('app-repository-card h6')).getText();
   }
 }
