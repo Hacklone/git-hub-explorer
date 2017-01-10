@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { GithubService } from '../shared/services/github/github.service';
 import { RepositoryMetadata } from '../shared/services/github/repository-metadata.model';
 
@@ -9,10 +9,13 @@ import { RepositoryMetadata } from '../shared/services/github/repository-metadat
 })
 export class SearchComponent implements OnInit {
 
-  constructor(private _gitHubService: GithubService) {
+  constructor(private _gitHubService: GithubService,
+              private _element: ElementRef) {
   }
 
   ngOnInit() {
+    //TODO: Focus element with directive
+    this._element.nativeElement.querySelector('app-search-box input').focus();
   }
 
   public repositoryLoadError: boolean = false;
