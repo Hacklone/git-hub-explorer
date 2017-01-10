@@ -21,6 +21,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this._routerEventsSubscription.unsubscribe();
+    if (this._routerEventsSubscription) {
+      this._routerEventsSubscription.unsubscribe();
+    }
   }
 }

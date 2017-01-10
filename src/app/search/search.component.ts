@@ -14,7 +14,7 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit() {
-    //TODO: Focus element with directive
+    // TODO: Focus element with directive
     this._element.nativeElement.querySelector('app-search-box input').focus();
   }
 
@@ -23,7 +23,7 @@ export class SearchComponent implements OnInit {
 
   public repositories: RepositoryMetadata[] = [];
 
-  async onSearch(searchTerm: string) {
+  public async onSearch(searchTerm: string) {
     this.loadingRepositories = true;
 
     this.repositories = [];
